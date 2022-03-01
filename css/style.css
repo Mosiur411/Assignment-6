@@ -1,46 +1,40 @@
-#phoneall{
+/* All Phone style */
+.allPhoneshow{
     display: none;
 }
+/* erro handeling */
 .errostyle{
     color: red;
     text-align: center;
-    margin-top: 16%;
+    padding:40px ;
     display: none;
 }
+/*  card grid style */
 .csstyle{
     display: grid;
     grid-gap: 20px;
     grid-template-columns:repeat(3,1fr);
     text-align: center;
 }
+/* Detail area */
 .Detail-area{
     width: 40%;
     margin: auto;
 }
+/* card responsive */
 @media only screen and (max-width: 768px) {
     .csstyle{
-        display: grid;
-        grid-gap: 10px;
         grid-template-columns:repeat(2,1fr);
-        text-align: center;
     }
     .Detail-area{
         width: 60%;
-        margin: auto;
     }
   }
 @media only screen and (max-width: 425px) {
     .csstyle{
-        display: grid;
-        grid-gap: 10px;
         grid-template-columns:repeat(1,1fr);
-        text-align: center;
     }
     .Detail-area{
         width: 100%;
-        margin: auto;
-    }
-    .errostyle{
-        margin-top: 45%;
     }
   }
