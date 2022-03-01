@@ -11,7 +11,7 @@ const searchclick = () =>{
         const url = `https://openapi.programming-hero.com/api/phones?search=${inputvalue}`
         fetch(url)
         .then(res => res.json())
-        .then(data => display(data.data))
+        .then(data => display(data.data.slice(0,20)))
         input.value=''
     } 
 }
@@ -32,8 +32,8 @@ const display = Mobile =>{
                 <h3>Brand: ${Mobiles.brand}</h3>
               <button class="btn btn-primary px-4" onclick="Detailclick('${Mobiles.slug}')">Detail</button>
             </div>
-          </div>`
-           Mobilearea.appendChild(div)
+            </div>`
+            Mobilearea.appendChild(div)
         //    const allPhone = document.getElementById("phoneall");
         //    allPhone.style.display="block"
         //    allPhone.addEventListener("click", function (Mobiles){
