@@ -1,8 +1,16 @@
 /* All Phone style */
-.allPhoneshow{
+#allPhoneshow{
     display: none;
+    margin-bottom: 20px;
 }
 /* erro handeling */
+#allphonepading{
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    padding: 15px 0;
+    display:none;
+}
 .errostyle{
     color: red;
     text-align: center;
@@ -32,6 +40,7 @@
   }
 @media only screen and (max-width: 425px) {
     .csstyle{
+        grid-gap: 0;
         grid-template-columns:repeat(1,1fr);
     }
     .Detail-area{

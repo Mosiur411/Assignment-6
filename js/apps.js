@@ -29,9 +29,11 @@ const display = Mobile =>{
     }
     else if(Mobile.length >= 20){
         clickmobile(Mobile.slice(0,20))
-        const allbutton = document.getElementsByClassName("allPhoneshow")[0];
-        allbutton.style.display ="block"
-        allbutton.addEventListener("click", function (){
+        /*   All Phone   */
+        document.getElementById("allphonepading").style.display="block"
+        const allbutton = document.getElementById("allPhoneshow");
+        allbutton.style.display ="block";
+        allbutton.addEventListener("click", function(){
             clickmobile(Mobile)
         })
     }
@@ -75,16 +77,20 @@ const displayDetail =(data)=>{
             <h3>Names: ${data.name}</h3>
             <h3>Brand: ${data.brand}</h3>
             <h5>ReleasDate: ${data.releaseDate}</h5>
-            <strong>${data.mainFeatures.storage}</strong>
-            <strong>${data.mainFeatures.displaySize}</strong>
-            <strong>${data.mainFeatures.chipSet}</strong>
-            <strong>${data.mainFeatures.memory}</strong>
-            <strong>${data.mainFeatures.sensors[0]}</strong>
-            <strong>${data.mainFeatures.sensors[1]}</strong>
-            <strong>${data.mainFeatures.sensors[2]}</strong>
-            <strong>${data.mainFeatures.sensors[3]}</strong>
-            <strong>${data.mainFeatures.sensors[4]}</strong>
-            <strong>${data.mainFeatures.sensors[5]}</strong>
+            <strong class="mb-1">${data.mainFeatures.storage}</strong>
+            <strong class="mb-1">${data.mainFeatures.displaySize}</strong>
+            <strong class="mb-1">${data.mainFeatures.chipSet}</strong>
+            <strong class="mb-1">${data.mainFeatures.memory}</strong>
+            <strong class="mb-1">${data.mainFeatures.sensors[0]}</strong>
+            <strong class="mb-1">${data.mainFeatures.sensors[1]}</strong>
+            <strong class="mb-1">${data.mainFeatures.sensors[2]}</strong>
+            <strong class="mb-1">${data.mainFeatures.sensors[3]}</strong>
+            <strong class="mb-1">${data.mainFeatures.sensors[4]}</strong>
+            <strong class="mb-1">${data.mainFeatures.sensors[5]}</strong>///
+            <strong class="mb-1">${data.releaseDate}</strong>
+            <strong class="mb-1">${data.others.WLAN}</strong>
+            <strong class="mb-1">${data.others.NFC}</strong>
+
         </div>
     </div>
     ` 
