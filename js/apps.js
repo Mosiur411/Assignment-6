@@ -2,6 +2,7 @@ document.getElementById("lodingarea").style.display="none"
 /* search click me */
 const searchclick = () =>{
     document.getElementById("lodingarea").style.display="block"
+    document.getElementById("allPhoneshow").style.display="none"
     document.getElementById("erro").style.display ="none"
     document.getElementById("Mobile-area").innerHTML='';
     document.getElementById("Detail-area-display").innerHTML=''
@@ -10,8 +11,7 @@ const searchclick = () =>{
     if(inputvalue == ''){
         document.getElementById("erro").style.display ="block"
         document.getElementById("lodingarea").style.display="none"
-        document.getElementById("allphonepading").style.display="none"
-        document.getElementsByClassName("allPhoneshow")[0].style.display="none"
+        document.getElementById("allPhoneshow").style.display="none"
     }else{
         const url = `https://openapi.programming-hero.com/api/phones?search=${inputvalue}`
         fetch(url)
@@ -25,7 +25,7 @@ const display = Mobile =>{
     document.getElementById("lodingarea").style.display="none"
     if(Mobile.length == 0){
        const erro = document.getElementById("erro");
-       erro.innerText ="Did Not Mobile"
+       erro.innerText ="No Result Found!!"
        erro.style.display ="block"
     }
     else if(Mobile.length >= 20){
