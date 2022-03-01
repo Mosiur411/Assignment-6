@@ -10,6 +10,7 @@ const searchclick = () =>{
     if(inputvalue == ''){
         document.getElementById("erro").style.display ="block"
         document.getElementById("lodingarea").style.display="none"
+        document.getElementById("allphonepading").style.display="none"
         document.getElementsByClassName("allPhoneshow")[0].style.display="none"
     }else{
         const url = `https://openapi.programming-hero.com/api/phones?search=${inputvalue}`
