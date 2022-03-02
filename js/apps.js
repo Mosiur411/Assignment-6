@@ -1,6 +1,6 @@
 document.getElementById("lodingarea").style.display="none"
 /* search click me */
-const searchclick = () =>{
+const searchclick =async() =>{
     document.getElementById("lodingarea").style.display="block"
     document.getElementById("allPhoneshow").style.display="none"
     document.getElementById("erro").style.display ="none"
@@ -14,9 +14,9 @@ const searchclick = () =>{
         document.getElementById("allPhoneshow").style.display="none"
     }else{
         const url = `https://openapi.programming-hero.com/api/phones?search=${inputvalue}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => display(data.data))
+        const res =await fetch(url);
+        const data = await res.json()
+        display(data.data)
     }
     input.value =''
 }
@@ -61,12 +61,12 @@ const clickmobile = Mobiledata =>{
     
 }
 /* Detail data load */
-const Detailclick = Detail =>{
+const Detailclick =async (Detail) =>{
     document.getElementById("Detail-area-display").innerHTML=''
     const Details =`https://openapi.programming-hero.com/api/phone/${Detail}`
-    fetch(Details)
-    .then(res => res.json())
-    .then(data =>displayDetail(data.data))
+    const res = await fetch(Details);
+    const data = await res.json()
+    displayDetail(data.data)
 }
 /* Detail displow show */
 const displayDetail =(data)=>{
@@ -87,7 +87,7 @@ const displayDetail =(data)=>{
             <strong class="mb-1">${data.mainFeatures.sensors[2]}</strong>
             <strong class="mb-1">${data.mainFeatures.sensors[3]}</strong>
             <strong class="mb-1">${data.mainFeatures.sensors[4]}</strong>
-            <strong class="mb-1">${data.mainFeatures.sensors[5]}</strong>///
+            <strong class="mb-1" >${data.mainFeatures.sensors[5]}</strong>///
             <strong class="mb-1">${data.releaseDate}</strong>
             <strong class="mb-1">${data.others.WLAN}</strong>
             <strong class="mb-1">${data.others.NFC}</strong>
